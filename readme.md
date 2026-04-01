@@ -20,22 +20,22 @@ Unlike standard "Text-to-SQL" wrappers that rely on a single prompt, this system
 ### The Orchestration Layer (LangGraph)
 The heart of the backend is a state machine that manages transitions between specialized nodes. By maintaining a persistent `AgentState`, the system ensures that context is never lost as it moves from analysis to execution.
 
-#### 1. The Ambiguity Analyzer (The Gatekeeper)
+#### 1. The Ambiguity Analyzer
 * **Role**: To prevent "Garbage In, Garbage Out."
 * **Logic**: This agent evaluates the user's query against the **Dynamic Schema Context** provided by the frontend. 
 * **Decision Matrix**: If the query is too broad (e.g., "show loans") or references non-existent columns, the analyzer flags the state as `UNCLEAR`. If valid, it routes to the Retrieval layer.
 
-#### 2. The Clarification Agent (Human-in-the-Loop)
+#### 2. The Clarification Agent 
 * **Role**: Contextual Refinement.
 * **Logic**: When the Analyzer flags a query, this agent takes over. It identifies specifically *what* is missing and asks the user a targeted question.
 * **Constraint**: To prevent "AI Hallucination Loops," this agent is limited to **2 turns**. If the user cannot provide a clear intent within two rounds, the agent gracefully terminates the session, protecting compute resources and user experience.
 
-#### 3. The RAG Retriever (The Librarian)
+#### 3. The RAG Retriever 
 * **Role**: Few-Shot Context Injection.
 * **Logic**: This node uses a **Semantic Search Tool** (`tools.py`) to query a local **ChromaDB** vector store. 
 * **Mechanism**: It embeds the user's intent using `nomic-embed-text` and finds the top 2 matching "Golden SQL" examples from the knowledge base. This context is then injected into the prompt for the final writer, significantly increasing the success rate for complex joins or aggregations.
 
-#### 4. The SQL Writer (The Expert)
+#### 4. The SQL Writer 
 * **Role**: Code Generation.
 * **Logic**: Using the user's query, the verified schema, and the RAG examples, this agent formulates a **SQLite-compatible** query. 
 * **Output**: It produces a two-part response: a conversational summary explaining the query's logic and the raw SQL code block.
