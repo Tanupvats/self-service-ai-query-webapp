@@ -13,7 +13,7 @@ This repository contains a full-stack, self-service business intelligence (BI) p
 
 ---
 
-## The Agentic Architecture: A Deep Dive
+## The Agentic Architecture
 
 Unlike standard "Text-to-SQL" wrappers that rely on a single prompt, this system implements a **Directed Acyclic Graph (DAG)** using **LangGraph**. This allows for a modular, iterative reasoning process where specialized agents handle specific parts of the request lifecycle.
 
@@ -46,7 +46,7 @@ The heart of the backend is a state machine that manages transitions between spe
 
 ## Agentic state Graph Flow
 
-[![Flow](Face_recog_demo.gif)]()
+[![Flow](agent_state_flow.png)]()
 
 
 ## Technical Stack & Security
