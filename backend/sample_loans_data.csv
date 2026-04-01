@@ -1,0 +1,8 @@
+loan_id,rm_name,client_name,loan_amount,interest_rate,status,risk_rating,origination_date
+L-1001,Sarah Jenkins,Acme Corp,1500000,5.2,Active,Low,2023-01-15
+L-1002,David Chen,TechFlow Inc,850000,6.1,Active,Medium,2023-03-22
+L-1003,Sarah Jenkins,Global Retailers,3200000,4.8,Default,High,2022-11-05
+L-1004,Michael Ross,Apex Manufacturing,450000,7.5,Closed,Low,2021-06-10
+L-1005,David Chen,Nexus Dynamics,2100000,5.9,Active,Medium,2023-08-14
+L-1006,Michael Ross,Stark Logistics,6000000,8.2,Active,High,2024-01-02
+L-1007,Sarah Jenkins,Quantum Computing Ltd,1250000,6.5,Active,High,2024-02-20
