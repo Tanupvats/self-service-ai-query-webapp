@@ -9,7 +9,7 @@ This repository contains a full-stack, self-service business intelligence (BI) p
 
 ## Demo
 
-[![Demo face Recognition](Face_recog_demo.gif)]()
+[![Demo](demo.gif)]()
 
 ---
 
