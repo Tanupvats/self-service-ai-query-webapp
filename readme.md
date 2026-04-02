@@ -136,4 +136,5 @@ npm run dev
 * **Input Sanitization**: The SQL Writer is instructed to use SQLite-only syntax, preventing execution errors on the client-side engine.
 
 ---
-**Author**: Tanup Vats
+## Author
+Tanup Vats
