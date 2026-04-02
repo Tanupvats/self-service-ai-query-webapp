@@ -137,4 +137,4 @@ npm run dev
 
 ---
 ## Author
-Tanup Vats
+**Tanup Vats**
