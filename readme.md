@@ -94,7 +94,7 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 # Seed the Vector Knowledge Base & Generate Sample Data
-python setup_dummy_data.py
+python setup_data.py # set up your data
 
 # Launch the Agentic API
 python api.py
@@ -119,7 +119,7 @@ npm run dev
 │   ├── nodes.py         # Specialized Agent Logic (The "Brains")
 │   ├── state.py         # State Definition & Reducer Logic
 │   ├── tools.py         # RAG Semantic Search Implementation
-│   └── setup_dummy_data.py  # Data Bootstrapper
+│   
 │
 ├── frontend/
 │   ├── src/
